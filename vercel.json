@@ -18,7 +18,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "YOUR APP URL",
+        "APP_URL": "https://desafio-br24-ko14sik6g-lucas-nogueiras-projects-09a8300d.vercel.app/",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
