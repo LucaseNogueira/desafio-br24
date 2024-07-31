@@ -1,6 +1,11 @@
 import HeaderWelcome from '@/Components/HeaderWelcome';
+import { RoundImage } from '@/Components/RoundImage';
 import { Link, Head } from '@inertiajs/react';
 import styled from 'styled-components';
+
+const links = [
+    {title: 'Entrar', href:route('company.index')}
+];
 
  const WelcomeContainer = styled.div`
     width: 100vw;
@@ -10,14 +15,40 @@ import styled from 'styled-components';
     background-attachment: fixed;
     background-size: cover;
  `
-const links = [
-    {title: 'Entrar', href:route('company.index')}
-];
+const Footer = styled.footer`
+    background-color: #171717;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+`
+
+const LinkFooter = styled.a`
+    display:inline-block;
+    justify-content: center;
+    align-items: center;
+`
 
 export default function Welcome() {
     return (
         <WelcomeContainer>
             <HeaderWelcome links={links}/>
+            <Footer>
+                <LinkFooter href="https://laravel.com/"><RoundImage source="/images/png/logo-laravel-icon-1024.png" alt="Laravel Logo"/></LinkFooter>
+                <LinkFooter href="https://pt-br.legacy.reactjs.org/"><RoundImage source="/images/png/React-Logo.png" alt="React Logo"/></LinkFooter>
+                <LinkFooter href="https://inertiajs.com/"><RoundImage source="/images/png/inertia-Logo.png" alt="Inertia Logo"/></LinkFooter>
+                <LinkFooter href="https://www.npmjs.com/"><RoundImage source="/images/png/npm-logo.png" alt="npm Logo"/></LinkFooter>
+                <LinkFooter href="https://vitejs.dev/"><RoundImage source="/images/png/vite-js-logo.png" alt="Vite Logo"/></LinkFooter>
+                <LinkFooter href="https://git-scm.com/"><RoundImage source="/images/png/git-logo.png" alt="Git Logo"/></LinkFooter>
+                <LinkFooter href="https://github.com/"><RoundImage source="/images/png/github-logo.png" alt="Github Logo"/></LinkFooter>
+                <LinkFooter href="https://vercel.com/"><RoundImage source="/images/png/vercel-logo.png" alt="Vercel Logo"/></LinkFooter>
+                <LinkFooter href="https://www.postgresql.org/"><RoundImage source="/images/png/postgresql-logo.png" alt="PostgreSQL Logo"/></LinkFooter>
+                <LinkFooter href="https://neon.tech/"><RoundImage source="/images/png/neon-logo.png" alt="Neon Logo"/></LinkFooter>
+            </Footer>
         </WelcomeContainer>
     );
 }

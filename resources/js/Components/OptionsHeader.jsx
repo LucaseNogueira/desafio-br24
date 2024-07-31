@@ -12,7 +12,7 @@ const Option = styled.li`
     color: ${props => props.linkColor || '#fff'};
     text-decoration: none;
     list-style: none;
-    padding: 0 5px;
+    padding: 0 20px;
 `
 
 export default function OptionsHeader({links, linkColor, justifyContent}){
