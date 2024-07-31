@@ -2,7 +2,10 @@
     "version": 2,
     "framework": null,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.7.1" }
+        "api/index.php": { "runtime": "vercel-php@0.7.1" },
+        "/(.*)":{
+            "maxDuration": 30
+        }
     },
     "outputDirectory": "public",
     "routes": [
@@ -31,8 +34,7 @@
         "LOG_CHANNEL": "stderr",
         "SESSION_DRIVER": "cookie",
 
-        "DB_CONNECTION": "mysql",
-        "DB_PORT": "3306",
-        "MYSQL_ATTR_SSL_CA": "/etc/pki/tls/certs/ca-bundle.crt"
+        "DB_CONNECTION": "pgsql",
+        "DB_PORT": "5432"
     }
 }
