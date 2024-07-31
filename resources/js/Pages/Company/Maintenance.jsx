@@ -2,8 +2,6 @@ import { AppContainer } from "@/Components/AppContainer";
 import { HeaderContainer } from "@/Components/HeaderContainer";
 import { MainContainer } from "@/Components/MainContainer";
 import OptionsHeader from "@/Components/OptionsHeader";
-import PrimaryButton from "@/Components/PrimaryButton";
-import SecondaryButton from "@/Components/SecondaryButton";
 import { router } from "@inertiajs/react";
 import { useState } from "react";
 import styled from "styled-components";
@@ -21,13 +19,26 @@ const FieldContainer = styled.div`
 
 const Label = styled.label`
     margin-bottom: 10px;
+    font-size: 14px;
+    color: #495057;
+    display:block;
 `
 
 const Input = styled.input`
     width: 100%;
     padding: 0.5rem;
+    font-size: 16px;
+    color: #495057;
+    border: 1px solid #ced4da;
     box-sizing: border-box;
     border-radius: 5px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus{
+        border-color: #80bdff;
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+    }
 `
 
 const Fieldset = styled.fieldset`
@@ -48,12 +59,6 @@ const ButtonFieldset = styled.button`
     cursor: pointer;
     color: #fff;
     margin-top: 10px;
-`
-
-const FieldsetButtonContainer = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    margin: 5px 10px;
 `
 
 const links = [
@@ -132,9 +137,6 @@ export default function Maintenance({action, method, company}){
                                     <Input type="text" id="contact_last_name_2" name="contact_last_name_2" placeholder="Digite o sobrenome do contato" value={values.contact_last_name_2} onChange={handleChange}/>
                                 </FieldContainer>
                             </FieldsetCard>
-                        {/* <FieldsetButtonContainer>
-                            <ButtonFieldset type="button">Adicionar</ButtonFieldset>
-                        </FieldsetButtonContainer> */}
                     </Fieldset>
                     <ButtonFieldset type="submit">Submit</ButtonFieldset>
                 </form>
