@@ -19,18 +19,6 @@ jobs:
             - name: Install Dependencies
               run: composer install
 
-            - name: Migrate DB
-              run: |
-                php artisan migrate --force
-              env:
-                APP_ENV: production
-                DB_CONNECTION: pgsql
-                DB_HOST: "ep-spring-rice-a555g6tt.us-east-2.aws.neon.tech"
-                DB_PORT: 5432
-                DB_DATABASE: desafio_br24
-                DB_USERNAME: desafio_br24_owner
-                DB_PASSWORD: "endpoint=ep-spring-rice-a555g6tt;bjq3VgMP2LUO"
-
             - name: Deploy to Vercel
               run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
               env:
