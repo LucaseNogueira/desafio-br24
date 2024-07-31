@@ -13,6 +13,8 @@ const Option = styled.li`
     text-decoration: none;
     list-style: none;
     padding: 0 20px;
+    font-size: 20px;
+    font-weight: 600;
 `
 
 export default function OptionsHeader({links, linkColor, justifyContent}){
