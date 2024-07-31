@@ -65,7 +65,8 @@ return [
 
         'daily' => [
             'driver' => 'daily',
-            'path' => storage_path('logs/laravel.log'),
+            // 'path' => storage_path('logs/laravel.log'),
+            'path' => sys_get_temp_dir().'/laravel.log',
             'level' => env('LOG_LEVEL', 'debug'),
             'days' => 14,
         ],
